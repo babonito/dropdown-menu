@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+  "title":"PhpAssist | Dropdown Menu"
+})
+<body>
+@@include('html/header.html', {})
+<main class="container">
+	<h1>Dropdown Menu</h1>
+	<div class="wrapper">
+		<div class="navigation">
+			<div class="userBox">
+				<div class="imgBox">
+					<img src="img/user.jpg" alt="user">
+				</div>
+				<p class="username">My Name</p>
+			</div>
+			<div class="menuToggle"></div>
+			<ul>
+				<li><a href="#"><i class="fal fa-user"></i>My Profile</a></li>
+				<li><a href="#"><i class="fal fa-comment"></i>Messages</a></li>
+				<li><a href="#"><i class="fal fa-bell"></i>Notification</a></li>
+				<li><a href="#"><i class="fal fa-cog"></i>Settings</a></li>
+				<li><a href="#"><i class="fal fa-question"></i>Help & Support</a></li>
+				<li><a href="#"><i class="fal fa-arrow-right-from-bracket"></i>Logout</a></li>
+			</ul>
+		</div>
+	</div>
+</main>
+@@include('html/footer.html', {})
+<script src="js/app.min.js"></script>
+</body>
+</html>

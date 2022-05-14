@@ -1,0 +1,165 @@
+@import "fonts";
+
+*, *::before, *::after {box-sizing: border-box;}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Gilroy', sans-serif;
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+.wrapper {
+  position: relative;
+  min-height: 30rem;
+  background: linear-gradient(45deg, #4e65ff, #92effd);
+}
+.navigation {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 120px;
+  height: 60px;
+  background: white;
+  box-shadow: 0 25px 35px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  transition: height 0.5s, width 0.5s;
+  transition-delay: 0s, 0.2s;
+  overflow: hidden;
+}
+.navigation.active {
+  width: 300px;
+  height: 400px;
+  transition: width 0.5s, height 0.5s;
+  transition-delay: 0s, 0.2s;
+}
+.navigation .userBox {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: white;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.5s;
+  transition-delay: 0.2s;
+}
+.navigation.active .userBox {
+  width: calc(100% - 60px);
+}
+.navigation .userBox .username {
+  white-space: nowrap;
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.navigation .userBox .imgBox {
+  position: relative;
+  min-width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 10px solid white;
+}
+.navigation .userBox .imgBox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.navigation .menuToggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation .menuToggle::before,
+.navigation .menuToggle::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: #555;
+  transition: 0.5s;
+}
+.navigation .menuToggle::before {
+  transform: translateY(-10px);
+  box-shadow: 0 10px #555;
+}
+.navigation .menuToggle::after {
+  transform: translateY(10px);
+}
+.navigation.active .menuToggle::before {
+  transform: translateY(0px) rotate(45deg);
+  box-shadow: 0 0 #555;
+}
+.navigation.active .menuToggle::after {
+  transform: translateY(0px) rotate(-45deg);
+}
+.navigation ul {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 60px);
+  margin-top: 60px;
+  padding: 20px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.navigation ul li {
+  list-style: none;
+}
+.navigation ul li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  color: #555;
+}
+.navigation ul li a:hover {
+  color: #0d6efd;
+}
+.navigation ul li a i {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-right: 0.2rem;
+}
+
+.fa-user::before {content: "\f007";}
+.fa-cog::before {content: "\f013";}
+.fa-comment::before {content: "\f075"; }
+.fa-bell::before {content: "\f0f3"; }
+.fa-question::before {content: "\f128"; }
+.fa-arrow-right-from-bracket::before {content: "\f08b"; }
+
+.fal, .fas, .far, .fad {
+  font-family: 'fa', sans-serif;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  width: 20px;
+
+}
+
+.fal { font-weight: 300;  }
+.far { font-weight: 400; }
+.fas { font-weight: 900; }
